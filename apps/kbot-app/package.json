@@ -5,6 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "node --nolazy -r dotenv/config -r ts-node/register -r tsconfig-paths/register index.ts",
+    "dev": "node --nolazy -r dotenv/config -r ts-node/register -r tsconfig-paths/register index.ts",
     "type-check": "tsc -b"
   },
   "devDependencies": {
