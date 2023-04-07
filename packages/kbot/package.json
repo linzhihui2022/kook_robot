@@ -1,0 +1,23 @@
+{
+  "name": "kbot",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.9.4"
+  },
+  "scripts": {
+    "type-check": "tsc -b"
+  },
+  "main": "./src",
+  "dependencies": {
+    "i18n": "workspace:*",
+    "dotenv": "^16.0.3",
+    "kbotify": "^0.2.10",
+    "zod": "^3.21.4"
+  },
+  "peerDependencies": {
+    "kbotify": "^0.2.10"
+  }
+}

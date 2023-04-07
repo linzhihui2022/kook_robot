@@ -8,12 +8,17 @@ const envSchema = z.object({
   KHL_KEY: z.string().nonempty("Khl key missing"),
 });
 const env = envSchema.parse(process.env);
+const init = () =>
+  new KBotify({
+    mode: "websocket",
+    token: env.KHL_TOKEN,
+    port: env.KHL_PORT,
+    verifyToken: env.KHL_VERIFY,
+    key: env.KHL_KEY,
+    ignoreDecryptError: true,
+  });
 
-export const bot = new KBotify({
-  mode: "websocket", //确保和开黑啦应用的后台设置一样。如果使用webhook，请详细阅读开发者手册关于"?compress=0"的部分。
-  token: env.KHL_TOKEN,
-  port: env.KHL_PORT,
-  verifyToken: env.KHL_VERIFY,
-  key: env.KHL_KEY,
-  ignoreDecryptError: true,
-});
+export default init;
+export * from "./commands/gmsrMenu";
+export * from "./commands/baseMenu";
+export * from "KBotify";

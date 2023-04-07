@@ -1,0 +1,19 @@
+{
+  "name": "i18n",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.9.4"
+  },
+  "scripts": {
+    "type-check": "tsc -b"
+  },
+  "main": "./src",
+  "dependencies": {
+    "@types/lodash": "^4.14.192",
+    "lodash": "^4.17.21",
+    "zod": "^3.21.4"
+  }
+}

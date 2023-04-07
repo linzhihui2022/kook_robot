@@ -1,0 +1,17 @@
+{
+  "gmsr": {
+    "help": "help",
+    "code": "gmsr",
+    "trigger": "gmsr",
+    "intro": "Content of gmsr",
+    "not_found": "WIP"
+  },
+  "base": {
+    "help": "help",
+    "code": "base",
+    "trigger": "base",
+    "intro": "Content of base",
+    "ping": "ping",
+    "pong": "pong"
+  }
+}
