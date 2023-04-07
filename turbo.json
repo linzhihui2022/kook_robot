@@ -1,6 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
+  "globalEnv": [
+    "KHL_TOKEN",
+    "KHL_PORT",
+    "KHL_VERIFY",
+    "KHL_KEY",
+    "LANG"
+  ],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],

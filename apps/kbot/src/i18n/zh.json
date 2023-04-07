@@ -1,0 +1,11 @@
+{
+  "gmsr": {
+    "help": "`@机器人 指令`获取机器人所有支持的指令",
+    "code": "gmsr",
+    "trigger": "gmsr",
+    "intro": "gmsr内容",
+    "ping": "ping",
+    "pong": "pong",
+    "not_found": "测试中..."
+  }
+}
