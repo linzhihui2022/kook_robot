@@ -1,5 +1,7 @@
-import kbotInit, { baseMenu, gmsrMenu, KBotify } from "kbot";
+import kbotInit, { baseMenu, GmsrMenu, KBotify } from "kbot";
 import { $t } from "i18n";
+import { contentful } from "cms";
+import { gmsrMenu } from "./src/commands/gmsr";
 
 export const bot: KBotify = kbotInit();
 

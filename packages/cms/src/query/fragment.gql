@@ -1,0 +1,19 @@
+fragment HeaderModule on HeaderModule{
+    content
+    divider
+    emoji
+}
+fragment SectionModule on SectionModule{
+    type
+    emoji
+    mode
+    accessory {
+        image {
+            url
+        }
+        imageUrl
+        size
+    }
+    divider
+    content
+}

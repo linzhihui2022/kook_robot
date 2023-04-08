@@ -4,6 +4,7 @@
     "code": "gmsr",
     "trigger": "gmsr",
     "intro": "gmsr内容",
+    "cmd": "指令",
     "not_found": "测试中..."
   },
   "base": {

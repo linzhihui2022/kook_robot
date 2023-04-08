@@ -1,0 +1,37 @@
+{
+  "name": "cms",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "@graphql-codegen/add": "^4.0.1",
+    "@graphql-codegen/cli": "^3.3.0",
+    "@graphql-codegen/client-preset": "^3.0.0",
+    "@graphql-codegen/typescript-graphql-request": "^4.5.9",
+    "@graphql-codegen/typescript-msw": "^1.1.6",
+    "eslint-config-custom": "workspace:*",
+    "helper": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "type-check": "tsc -b",
+    "codegen": "graphql-codegen -r dotenv/config --config ./src/config.ts"
+  },
+  "main": "./src",
+  "dependencies": {
+    "@graphql-codegen/typescript-generic-sdk": "^3.1.0",
+    "@types/lodash": "^4.14.192",
+    "dotenv": "^16.0.3",
+    "eslint": "^7.32.0",
+    "graphql": "^16.6.0",
+    "graphql-request": "5.1.0",
+    "graphql-tag": "^2.12.6",
+    "msw": "^1.2.1",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "zod": "^3.21.4"
+  },
+  "peerDependencies": {
+    "graphql-tag": "^2.12.6"
+  }
+}

@@ -4,6 +4,7 @@
     "code": "gmsr",
     "trigger": "gmsr",
     "intro": "Content of gmsr",
+    "cmd": "cmd",
     "not_found": "WIP"
   },
   "base": {

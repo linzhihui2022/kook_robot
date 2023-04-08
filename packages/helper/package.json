@@ -1,0 +1,16 @@
+{
+  "name": "helper",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.9.4"
+  },
+  "scripts": {
+    "type-check": "tsc -b"
+  },
+  "main": "./src",
+  "dependencies": {
+  }
+}

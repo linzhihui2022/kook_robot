@@ -14,4 +14,4 @@ const transitions: Record<string, Transition> = {
 };
 
 export const $t = (key: string, lang: string = env.LANG) =>
-  get(transitions[lang || env.LANG], key) as string;
+  (get(transitions[lang || env.LANG], key) as string) || key;

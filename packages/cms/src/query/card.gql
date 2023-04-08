@@ -1,0 +1,16 @@
+query cards($where: CardFilter, $limit: Int, $skip: Int) {
+  cardCollection(where: $where, limit: $limit, skip: $skip) {
+    items {
+      modulesCollection {
+        items {
+          __typename
+          ...HeaderModule
+          ...SectionModule
+        }
+      }
+      name
+      theme
+      size
+    }
+  }
+}
