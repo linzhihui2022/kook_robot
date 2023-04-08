@@ -1,0 +1,16 @@
+import { ParsedQs } from "qs";
+import { ParamsDictionary } from "express-serve-static-core";
+
+declare global {
+  namespace Express {
+    interface Request<
+      P = ParamsDictionary,
+      ResBody = any,
+      ReqBody = any,
+      ReqQuery = ParsedQs,
+      LocalsObj extends Record<string, any> = Record<string, any>
+    > extends Request<P, ResBody, ReqBody, ReqQuery, LocalsObj> {
+      $t: typeof $t;
+    }
+  }
+}

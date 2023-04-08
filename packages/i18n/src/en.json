@@ -1,18 +1,18 @@
 {
   "gmsr": {
-    "help": "help",
-    "code": "gmsr",
-    "trigger": "gmsr",
+    "help": "`@me cmd` Get all commands",
     "intro": "Content of gmsr",
     "cmd": "cmd",
     "not_found": "WIP"
   },
   "base": {
     "help": "help",
-    "code": "base",
-    "trigger": "base",
     "intro": "Content of base",
     "ping": "ping",
     "pong": "pong"
+  },
+  "system": {
+    "401": "Who are you？",
+    "403": "I don't know you!"
   }
 }

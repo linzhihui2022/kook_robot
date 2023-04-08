@@ -1,10 +1,10 @@
 import { AppCommand, AppFunc } from "kbotify";
 import { $t } from "i18n";
-import { Card, CardObject } from "kbotify/dist/core/card";
+import { Card } from "kbotify/dist/core/card";
 
 export class GmsrMenu extends AppCommand {
-  code = $t("gmsr.code");
-  trigger = $t("gmsr.trigger");
+  code = "gmsr";
+  trigger = "gmsr";
   help = $t("gmsr.help");
   intro = $t("gmsr.intro");
 

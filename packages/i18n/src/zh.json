@@ -1,18 +1,18 @@
 {
   "gmsr": {
     "help": "`@机器人 指令`获取机器人所有支持的指令",
-    "code": "gmsr",
-    "trigger": "gmsr",
     "intro": "gmsr内容",
     "cmd": "指令",
     "not_found": "测试中..."
   },
   "base": {
     "help": "`@机器人 指令`获取机器人所有支持的指令",
-    "code": "base",
-    "trigger": "base",
     "intro": "base内容",
     "ping": "ping",
     "pong": "pong"
+  },
+  "system": {
+    "401": "你是谁？",
+    "403": "我不认识你!"
   }
 }

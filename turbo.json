@@ -8,7 +8,10 @@
     "KHL_KEY",
     "LANG",
     "CONTENTFUL_TOKEN",
-    "CONTENTFUL_SPACE"
+    "CONTENTFUL_SPACE",
+    "MVP_MESSAGE_CHANNELS",
+    "API_USER",
+    "API_PASSWORD"
   ],
   "pipeline": {
     "build": {
