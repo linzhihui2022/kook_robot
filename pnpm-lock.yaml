@@ -24,6 +24,7 @@ importers:
       '@types/node': ^18.11.17
       cheerio: 1.0.0-rc.12
       cms: workspace:*
+      crawler: workspace:*
       eslint-config-custom: workspace:*
       express: ^4.18.2
       helper: workspace:*
@@ -40,6 +41,8 @@ importers:
       '@types/express': registry.npmmirror.com/@types/express/4.17.17
       '@types/node': registry.npmmirror.com/@types/node/18.15.11
       cheerio: registry.npmmirror.com/cheerio/1.0.0-rc.12
+      cms: link:../../packages/cms
+      crawler: link:../../packages/crawler
       express: registry.npmmirror.com/express/4.18.2
       i18n: link:../../packages/i18n
       kbot: link:../../packages/kbot
@@ -49,7 +52,6 @@ importers:
       tsconfig-paths: registry.npmmirror.com/tsconfig-paths/4.2.0
       zod: registry.npmmirror.com/zod/3.21.4
     devDependencies:
-      cms: link:../../packages/cms
       eslint-config-custom: link:../../packages/eslint-config-custom
       helper: link:../../packages/helper
       tsconfig: link:../../packages/tsconfig
@@ -130,6 +132,21 @@ importers:
       '@graphql-codegen/typescript-msw': registry.npmmirror.com/@graphql-codegen/typescript-msw/1.1.6_graphql@16.6.0
       eslint-config-custom: link:../eslint-config-custom
       helper: link:../helper
+      tsconfig: link:../tsconfig
+      typescript: registry.npmmirror.com/typescript/4.9.5
+
+  packages/crawler:
+    specifiers:
+      cheerio: 1.0.0-rc.12
+      eslint-config-custom: workspace:*
+      helper: workspace:*
+      tsconfig: workspace:*
+      typescript: ^4.9.4
+    dependencies:
+      cheerio: registry.npmmirror.com/cheerio/1.0.0-rc.12
+      helper: link:../helper
+    devDependencies:
+      eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       typescript: registry.npmmirror.com/typescript/4.9.5
 

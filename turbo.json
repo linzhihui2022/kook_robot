@@ -11,7 +11,8 @@
     "CONTENTFUL_SPACE",
     "MVP_MESSAGE_CHANNELS",
     "API_USER",
-    "API_PASSWORD"
+    "API_PASSWORD",
+    "MAX_MAINTENANCE_PAGE"
   ],
   "pipeline": {
     "build": {

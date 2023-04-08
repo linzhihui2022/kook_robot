@@ -1,5 +1,6 @@
 import kbotInit, { baseMenu, KBotify } from "kbot";
 import { gmsrMenu } from "./commands/gmsr";
+import { $t } from "i18n";
 
 export const bot: KBotify = kbotInit();
 
@@ -22,5 +23,31 @@ bot.message.on("text", async (msg) => {
   }
 });
 
+const checkMaintenanceTargetMsgId = new Map<string, boolean>();
+bot.message.on("buttonEvent", async (msg) => {
+  const { targetMsgId, content } = msg;
+  try {
+    const returnValue = JSON.parse(content);
+    if (returnValue.type === "maintenance") {
+      if (checkMaintenanceTargetMsgId.has(targetMsgId)) {
+        await bot.execute(
+          gmsrMenu.code,
+          [$t("gmsr.maintenance.disabled")],
+          msg
+        );
+        return;
+      }
+      checkMaintenanceTargetMsgId.set(targetMsgId, true);
+
+      await bot.execute(
+        gmsrMenu.code,
+        [$t("gmsr.maintenance.cmd"), JSON.stringify(returnValue.last)],
+        msg
+      );
+    }
+  } catch (e) {
+    return;
+  }
+});
 bot.addCommands(baseMenu);
 bot.addCommands(gmsrMenu);

@@ -14,5 +14,11 @@ const transitions: Record<string, Lang> = {
   en,
 };
 
-export const $t = (key: NestedKeyOf<Lang>, lang: string = env.LANG) =>
-  (get(transitions[lang || env.LANG], key) as string) || key;
+export const $t = (
+  key: NestedKeyOf<Lang>,
+  replace: Record<string, string> = {}
+) =>
+  ((get(transitions[env.LANG], key) as string) || key)?.replace(
+    /{{([^}]+)}}/g,
+    (ori, k) => replace[k] || ori
+  );

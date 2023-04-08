@@ -7,5 +7,6 @@ const envSchema = z.object({
     .transform((v) => [...new Set(v.split(","))]),
   API_USER: z.string(),
   API_PASSWORD: z.string(),
+  MAX_MAINTENANCE_PAGE: z.string().regex(/^\d*$/).transform(Number),
 });
 export const env = envSchema.parse(process.env);
