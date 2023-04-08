@@ -1,5 +1,4 @@
 import kbotInit, { baseMenu, KBotify } from "kbot";
-import { $t } from "i18n";
 import { gmsrMenu } from "./commands/gmsr";
 
 export const bot: KBotify = kbotInit();
@@ -10,11 +9,16 @@ bot.message.on("text", async (msg) => {
     msg.mention.user.includes(msg.client.userId)
   ) {
     const args = msg.content.split(" ").slice(1);
-    if (args[0] === $t("base.ping")) {
-      await bot.execute("base", args, msg);
-      return;
+    let hit = false;
+    for (const menu of [baseMenu, gmsrMenu]) {
+      if (Object.keys(menu.hitMap).includes(args[0])) {
+        hit = true;
+        await bot.execute(menu.code, args, msg);
+      }
     }
-    await bot.execute("gmsr", args, msg);
+    if (!hit) {
+      await bot.execute(baseMenu.code, args, msg);
+    }
   }
 });
 

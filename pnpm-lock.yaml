@@ -163,12 +163,14 @@ importers:
     specifiers:
       '@types/lodash': ^4.14.192
       eslint-config-custom: workspace:*
+      helper: workspace:*
       lodash: ^4.17.21
       tsconfig: workspace:*
       typescript: ^4.9.4
       zod: ^3.21.4
     dependencies:
       '@types/lodash': registry.npmmirror.com/@types/lodash/4.14.192
+      helper: link:../helper
       lodash: registry.npmmirror.com/lodash/4.17.21
       zod: registry.npmmirror.com/zod/3.21.4
     devDependencies:
