@@ -24,6 +24,7 @@
     "crawler": "workspace:*",
     "server": "workspace:*",
     "kbot": "workspace:*",
+    "logger": "workspace:*",
     "kbotify": "^0.2.10",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",

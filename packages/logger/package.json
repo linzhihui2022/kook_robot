@@ -1,0 +1,22 @@
+{
+  "name": "logger",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.9.4"
+  },
+  "scripts": {
+    "type-check": "tsc -b"
+  },
+  "main": "./src",
+  "dependencies": {
+    "@types/lodash": "^4.14.192",
+    "helper": "workspace:*",
+    "kbotify": "^0.2.10",
+    "lodash": "^4.17.21",
+    "lru-cache": "^8.0.5",
+    "zod": "^3.21.4"
+  }
+}

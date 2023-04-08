@@ -1,10 +1,12 @@
 import kbotInit, { baseMenu, KBotify } from "kbot";
 import { gmsrMenu } from "./commands/gmsr";
 import { $t } from "i18n";
+import { logger } from "./logger";
 
 export const bot: KBotify = kbotInit();
 
 bot.message.on("text", async (msg) => {
+  logger.pushMessage(msg);
   if (
     msg.mention.user.length >= 1 &&
     msg.mention.user.includes(msg.client.userId)
@@ -25,6 +27,7 @@ bot.message.on("text", async (msg) => {
 
 const checkMaintenanceTargetMsgId = new Map<string, boolean>();
 bot.message.on("buttonEvent", async (msg) => {
+  logger.pushEvent(msg);
   const { targetMsgId, content } = msg;
   try {
     const returnValue = JSON.parse(content);

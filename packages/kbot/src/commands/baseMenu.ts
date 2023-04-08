@@ -14,7 +14,7 @@ class BaseMenu extends AppCommand {
 
   func: AppFunc = async (session) => {
     const key = session.args[0];
-    if (Object.keys(key).includes(key)) {
+    if (Object.keys(this.hitMap).includes(key)) {
       return this.hitMap[session.args[0]]?.(session);
     }
     return session.send($t("system.wip"));
