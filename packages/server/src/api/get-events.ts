@@ -18,7 +18,7 @@ export const getEventsRoute = "/events";
 
 export const fetchEvents = (after: string = "", prefix: string = "") => {
   return fetch(
-    `http://localhost:3000${getEventsRoute}?after=${after}&prefix=${prefix}`,
+    `http://localhost:8001${getEventsRoute}?after=${after}&prefix=${prefix}`,
     {
       headers: setAuth(),
     }

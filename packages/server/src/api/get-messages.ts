@@ -15,7 +15,7 @@ export const getMessagesRoute = "/messages";
 
 export const fetchMessages = (after: string = "", prefix: string = "") => {
   return fetch(
-    `http://localhost:3000${getMessagesRoute}?after=${after}&prefix=${prefix}`,
+    `http://localhost:8001${getMessagesRoute}?after=${after}&prefix=${prefix}`,
     {
       headers: setAuth(),
     }

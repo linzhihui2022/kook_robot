@@ -14,7 +14,7 @@ import { loggerMiddle } from "server/src/middleware/logger";
 import { logger } from "./src/logger";
 
 const app = express();
-const PORT = 3000;
+const PORT = 8001;
 
 setupMiddleware(app, [
   i18nMiddle,
