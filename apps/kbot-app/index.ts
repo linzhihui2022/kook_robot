@@ -1,18 +1,31 @@
 import express from "express";
-import { authMiddle, i18nMiddle, setupMiddleware } from "server";
+import {
+  authMiddle,
+  i18nMiddle,
+  setupMiddleware,
+  getEvents,
+  getEventsRoute,
+  getMessages,
+  getMessagesRoute,
+} from "server";
 import { botMiddle, botWebhookRouter } from "./src/middleware/bot";
 import { bot } from "./src/bot";
-import { getMessages } from "./src/api/get-messages";
-import { getEvents } from "./src/api/get-events";
+import { loggerMiddle } from "server/src/middleware/logger";
+import { logger } from "./src/logger";
 
 const app = express();
 const PORT = 3000;
 
-setupMiddleware(app, [i18nMiddle, authMiddle, botMiddle(bot)]);
+setupMiddleware(app, [
+  i18nMiddle,
+  authMiddle,
+  loggerMiddle(logger),
+  botMiddle(bot),
+]);
 
-app.use("/webhook/mvp", botWebhookRouter);
-app.use("/events", getEvents);
-app.use("/messages", getMessages);
+app.get("/webhook/mvp", botWebhookRouter);
+app.get(getEventsRoute, getEvents);
+app.get(getMessagesRoute, getMessages);
 
 app.listen(PORT, () => {
   bot.connect();

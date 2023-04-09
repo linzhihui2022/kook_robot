@@ -1,25 +1,19 @@
 import { User } from "kaiheila-bot-root/dist/types/common";
 import { ButtonEventMessage, TextMessage } from "kbotify";
-export interface MessageItem {
-  author: User;
-  channelName?: string;
-  channelId: string;
-  guildId?: string;
-  content: string;
-  msgId: string;
-  msgTimestamp: number;
-  id: number;
-}
-export interface EventItem {
-  msgId: string;
-  msgTimestamp: number;
-  guildId?: string;
-  channelId: string;
-  targetMsgId: string;
-  content: string;
-  userId: string;
+export interface LoggerItem {
   user: User;
+  channelId: string;
+  guildId?: string;
+  msgId: string;
+  msgTimestamp: number;
   id: number;
+  content: string;
+}
+export interface MessageItem extends LoggerItem {
+  channelName?: string;
+}
+export interface EventItem extends LoggerItem {
+  targetMsgId: string;
 }
 
 export class Logger {
@@ -37,8 +31,8 @@ export class Logger {
       msgId,
       msgTimestamp,
     } = msg;
-    this.messageCache.push({
-      author,
+    this.messageCache.unshift({
+      user: author,
       channelName,
       channelId,
       guildId,
@@ -56,29 +50,35 @@ export class Logger {
       channelId,
       targetMsgId,
       content,
-      userId,
       user,
     } = msg;
-    this.eventCache.push({
+    this.eventCache.unshift({
       msgId,
       msgTimestamp,
       guildId,
       channelId,
       targetMsgId,
       content,
-      userId,
       user,
       id: new Date().getTime(),
     });
   }
 
-  getMessage(after: number) {
+  getMessage(after: number, prefix?: number) {
+    const prefixIndex = this.messageCache.findIndex((i) => i.id === prefix);
     const start = this.messageCache.findIndex((i) => i.id === after) + 1;
-    return this.messageCache.slice(start, start + 10);
+    return {
+      append: this.messageCache.slice(start, start + 2),
+      prefix: prefixIndex > -1 ? this.messageCache.slice(0, prefixIndex) : [],
+    };
   }
 
-  getEvent(after: number) {
+  getEvent(after: number, prefix?: number) {
+    const prefixIndex = this.eventCache.findIndex((i) => i.id === prefix);
     const start = this.eventCache.findIndex((i) => i.id === after) + 1;
-    return this.eventCache.slice(start, start + 10);
+    return {
+      append: this.eventCache.slice(start, start + 2),
+      prefix: prefixIndex > -1 ? this.eventCache.slice(0, prefixIndex) : [],
+    };
   }
 }

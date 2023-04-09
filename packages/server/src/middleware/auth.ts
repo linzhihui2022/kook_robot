@@ -18,3 +18,8 @@ export const authMiddle: RequestHandler = (req, res, next) => {
 };
 
 export const setupAuthMiddle = (app: Express) => app.use(authMiddle);
+
+export const setAuth = (headers = new Headers()) => {
+  headers.set("authorization", token);
+  return headers;
+};

@@ -1,27 +1,34 @@
 import * as React from "react";
+import Image from "next/image";
 
 export const Card = ({
   title,
-  cta,
-  href,
+  content,
+  avatar,
 }: {
-  title: string;
-  cta: string;
-  href: string;
+  title: React.ReactElement;
+  content: string;
+  avatar: string;
 }) => {
   return (
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      href={href}
-      className="ui-group ui-mt-4 ui-rounded-lg ui-border ui-border-transparent ui-overflow-hidden ui-bg-origin-border ui-bg-gradient-to-r ui-from-brandred ui-to-brandblue ui-text-[#6b7280]"
-    >
-      <div className="ui-p-4 ui-bg-zinc-900 ui-h-full">
-        <p className="ui-inline-block ui-text-xl ui-text-white">{title}</p>
-        <div className="ui-text-xs ui-mt-4 group-hover:ui-underline">
-          {cta} →
+    <div className="ui-group ui-py-4 ui-rounded-lg ui-overflow-hidden ui-text-gray-300">
+      <div className=" ui-bg-zinc-900 ui-h-full">
+        <div className="ui-flex ui-space-x-4">
+          <div className="ui-flex-shrink-0">
+            <Image
+              src={avatar}
+              alt="avatar"
+              width={40}
+              height={40}
+              className="ui-rounded-full"
+            />
+          </div>
+          <div className="ui-flex-1">
+            <p className="ui-text-white ui-leading-5 ui-space-x-2">{title}</p>
+            <p className="ui-text-base  ui-leading-6">{content}</p>
+          </div>
         </div>
       </div>
-    </a>
+    </div>
   );
 };

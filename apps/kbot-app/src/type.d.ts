@@ -1,6 +1,7 @@
 import { KBotify } from "kbotify";
 import { ParamsDictionary } from "express-serve-static-core";
 import { ParsedQs } from "qs";
+import { Logger } from "logger";
 
 declare global {
   namespace Express {
@@ -13,6 +14,7 @@ declare global {
     > extends Request<P, ResBody, ReqBody, ReqQuery, LocalsObj> {
       $t: typeof $t;
       bot: KBotify;
+      logger: Logger;
     }
   }
 }
