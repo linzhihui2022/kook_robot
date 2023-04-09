@@ -1,6 +1,7 @@
 import { RequestHandler } from "express-serve-static-core";
 import { MessageItem } from "logger";
 import { setAuth } from "../middleware";
+import { env } from "../env";
 interface GetMessagesData {
   append: MessageItem[];
   prefix: MessageItem[];
@@ -15,7 +16,7 @@ export const getMessagesRoute = "/messages";
 
 export const fetchMessages = (after: string = "", prefix: string = "") => {
   return fetch(
-    `http://localhost:8001${getMessagesRoute}?after=${after}&prefix=${prefix}`,
+    `${env.EXPRESS_API}${getMessagesRoute}?after=${after}&prefix=${prefix}`,
     {
       headers: setAuth(),
     }

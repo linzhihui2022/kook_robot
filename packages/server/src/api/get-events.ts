@@ -1,6 +1,7 @@
 import { RequestHandler } from "express-serve-static-core";
 import { EventItem } from "logger";
 import { setAuth } from "../middleware";
+import { env } from "../env";
 
 export interface GetEventsData {
   append: EventItem[];
@@ -18,7 +19,7 @@ export const getEventsRoute = "/events";
 
 export const fetchEvents = (after: string = "", prefix: string = "") => {
   return fetch(
-    `http://localhost:8001${getEventsRoute}?after=${after}&prefix=${prefix}`,
+    `${env.EXPRESS_API}${getEventsRoute}?after=${after}&prefix=${prefix}`,
     {
       headers: setAuth(),
     }

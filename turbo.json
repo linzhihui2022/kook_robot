@@ -12,7 +12,8 @@
     "MVP_MESSAGE_CHANNELS",
     "API_USER",
     "API_PASSWORD",
-    "MAX_MAINTENANCE_PAGE"
+    "MAX_MAINTENANCE_PAGE",
+    "EXPRESS_API"
   ],
   "pipeline": {
     "build": {
