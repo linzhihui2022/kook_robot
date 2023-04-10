@@ -14,8 +14,9 @@ RUN mkdir /app
 WORKDIR /app
 
 COPY . .
-
-RUN pnpm install && pnpm build
+ARG EnvironmentVariable
+RUN pnpm install
+RUN pnpm build
 
 
 FROM debian:bullseye-slim
@@ -28,5 +29,5 @@ COPY --from=builder /app /app
 WORKDIR /app
 ENV NODE_ENV production
 ENV PATH /usr/local/node/bin:$PATH
-
+ARG EnvironmentVariable
 CMD [ "pnpm", "start" ]
