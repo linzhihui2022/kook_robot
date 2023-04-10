@@ -6,7 +6,7 @@ import { Lang } from "./type";
 import { NestedKeyOf } from "helper";
 
 const envSchema = z.object({
-  LANG: z.enum(["zh", "en"]).default("zh"),
+  KOOK_LANG: z.enum(["zh", "en"]).default("zh"),
 });
 const env = envSchema.parse(process.env);
 const transitions: Record<string, Lang> = {
@@ -18,7 +18,7 @@ export const $t = (
   key: NestedKeyOf<Lang>,
   replace: Record<string, string> = {}
 ) =>
-  ((get(transitions[env.LANG], key) as string) || key)?.replace(
+  ((get(transitions[env.KOOK_LANG], key) as string) || key)?.replace(
     /{{([^}]+)}}/g,
     (ori, k) => replace[k] || ori
   );
