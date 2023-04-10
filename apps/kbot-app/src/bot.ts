@@ -1,7 +1,8 @@
-import kbotInit, { baseMenu, KBotify } from "kbot";
+import kbotInit, { baseMenu } from "kbot";
 import { gmsrMenu } from "./commands/gmsr";
 import { $t } from "i18n";
 import { logger } from "./logger";
+import { KBotify } from "KBotify";
 
 export const bot: KBotify = kbotInit();
 

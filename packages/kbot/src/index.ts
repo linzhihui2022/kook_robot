@@ -21,4 +21,3 @@ const init = () =>
 export default init;
 export * from "./commands/gmsrMenu";
 export * from "./commands/baseMenu";
-export * from "KBotify";

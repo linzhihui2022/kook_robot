@@ -1,5 +1,5 @@
 import { RequestHandler } from "express-serve-static-core";
-import { KBotify } from "kbot";
+import { KBotify } from "KBotify";
 import { env } from "../env";
 import { MessageType } from "kaiheila-bot-root/dist/types/MessageType";
 
