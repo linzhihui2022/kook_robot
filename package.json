@@ -17,5 +17,9 @@
     "turbo": "latest",
     "typescript":  "^4.9.4"
   },
-  "packageManager": "pnpm@7.15.0"
+  "engines": {
+    "node": "18.x",
+    "pnpm": "8.2.0"
+  },
+  "packageManager": "pnpm@8.2.0"
 }
